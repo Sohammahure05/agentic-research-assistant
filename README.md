@@ -100,15 +100,34 @@ run_agent("Generate a PDF report for the first paper")
 Python · LangChain · Groq (Llama 3.1) · Sentence Transformers · FAISS · Hugging Face Transformers (BART) · KeyBERT · spaCy · ReportLab · Rich
 
 
-## Demo
+## 🎬 Demo
 
-![Search results](assets/demo-search.png)
+The agent handles a full multi-turn research workflow — searching, comparing, recommending, citing, and generating a report — all from natural language queries, without running a fixed pipeline every time.
 
-![Summary output](assets/demo-summary.png)
+**1. Search papers on a topic**
 
-![Summary compare](assets/demo-compare.png)
+<img src="assets/demo-search.png" width="700" alt="Agent searching for papers on vision transformers" />
 
-![Summary output](assets/pdf-report-output.png)
+The agent finds the most relevant papers using semantic search over the FAISS index, then waits for the next instruction instead of running every tool automatically.
+
+**2. Compare papers in context**
+
+<img src="assets/demo-compare.png" width="700" alt="Agent comparing two papers found earlier" />
+
+A follow-up query like *"compare the first and third"* is understood in context — the agent remembers which papers were found earlier in the conversation, so there's no need to repeat paper titles or IDs.
+
+**3. Recommend similar papers + generate a citation**
+
+<img src="assets/demo-summary.png" width="700" alt="Agent recommending similar papers and generating an APA citation" />
+
+The planner routes each request to the right tool on its own — *"recommend more like the first"* calls `recommend_similar_papers`, while *"cite it in APA"* calls `generate_citation`, all within the same conversation.
+
+**4. Export a PDF report**
+
+<img src="assets/pdf-report-output.png" width="700" alt="Generated PDF report output" />
+
+A simple prompt like *"generate a PDF report"* triggers `generate_report`, which compiles the paper's summary, keywords, and entities into a downloadable PDF.
+
 
 ## Possible Improvements
 
