@@ -1,0 +1,16 @@
+streamlit
+datasets
+pandas
+numpy
+scikit-learn
+sentence-transformers
+faiss-cpu
+transformers==4.46.3
+keybert==0.8.5
+spacy
+reportlab
+rich
+langchain
+langchain-core
+langchain-community
+langchain-groq
