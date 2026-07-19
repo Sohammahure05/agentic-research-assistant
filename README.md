@@ -5,11 +5,11 @@
 ![LangChain](https://img.shields.io/badge/🦜-LangChain-blue)
 ![Groq](https://img.shields.io/badge/LLM-Groq_Llama_3.1-orange)
 
-An autonomous, tool-using AI agent built on top of the [Research Paper Recommendation System](https://github.com/Sohammahure05/research-paper-recommender). Instead of a fixed pipeline, a **Planner Agent** (an LLM) decides *which tools to call, in what order, and whether to call them at all* — based on what the user actually asks for.
+An autonomous, tool-using AI agent for exploring and analyzing research papers. Instead of running a fixed pipeline, a **Planner Agent** (an LLM) decides *which tools to call, in what order, and whether to call them at all* — based on what the user actually asks for.
 
-## Why this is different from Project 2
+## How it works
 
-Project 2 always ran the same fixed sequence — search → summarize → keywords → entities → PDF — for every query. This project replaces that fixed sequence with a **reasoning agent**:
+The agent doesn't run every step for every query — it reasons about intent and only invokes the tools it actually needs:
 
 - Ask *"find papers on vision transformers"* → only `search_papers` runs
 - Ask *"summarize the first one"* → the agent remembers the paper from the last turn and only calls `summarize_paper`
