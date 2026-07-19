@@ -99,6 +99,17 @@ run_agent("Generate a PDF report for the first paper")
 
 Python · LangChain · Groq (Llama 3.1) · Sentence Transformers · FAISS · Hugging Face Transformers (BART) · KeyBERT · spaCy · ReportLab · Rich
 
+
+## Demo
+
+![Search results](assets/demo-search.png)
+
+![Summary output](assets/demo-summary.png)
+
+![Summary compare](assets/demo-compare.png)
+
+![Summary output](assets/pdf-report-output.png)
+
 ## Possible Improvements
 
 - Persist conversation memory to disk (e.g. `MemorySaver` / SQLite) instead of an in-memory list
